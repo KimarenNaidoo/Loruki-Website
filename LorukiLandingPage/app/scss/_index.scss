@@ -1,0 +1,146 @@
+/* Showcase */
+
+.showcase {
+    height: 400px;
+    background-color: $navigationBarBlue;
+    color: white;
+    position: relative;
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        margin: 20px 0;
+    }
+
+    .grid {
+        overflow: visible;
+        grid-template-columns: 55% 45%;
+        gap: 30px;
+    }
+
+    &-text {
+        animation: slideInFromLeft 1s ease-in;  
+    }
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        height: 100px;
+        bottom: -70px;
+        right: 0;
+        left: 0;
+        background: white;
+        transform: skewY(-3deg);
+        -webkit-transform: skewY(-3deg);
+        -moz-transform: skewY(-3deg);
+        -ms-transform: skewY(-3deg);
+    }
+
+    &-form {
+        position: relative;
+        top: 60px;
+        height: 300px;
+        width: 400px;
+        padding: 40px;
+        z-index: 100;
+        justify-self: flex-end;
+        animation: slideInFromRight 1s ease-in;  
+
+        .form-control {
+            margin: 30px 0;
+        }
+
+        input[type="text"] {
+            border: 0;
+            border-bottom: 1px solid $inputBorderColor;
+            width: 100%;
+            padding: 3px;
+            font-size: 16px;
+        }
+
+        input[type="email"] {
+            border: 0;
+            border-bottom: 1px solid $inputBorderColor;
+            width: 100%;
+            padding: 3px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    }
+
+}
+
+
+/* Stats */
+
+.stats {
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;  
+
+    &-heading {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    & .grid h3 {
+        font-size: 35px;
+    }
+
+    & .grid p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+/* CLI */
+
+.cli {
+    
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .grid > *:first-child {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+    } // whatever the first child is
+}
+
+
+/* Cloud */
+
+.cloud {
+    .grid {
+        grid-template-columns: 4fr 3fr;
+    }
+}
+
+/* Languages */
+
+.languages {
+
+    .flex {
+        flex-wrap:wrap;
+    }
+
+    .card {
+        text-align: center;
+        margin: 18px 10px 40px;
+        transition: transform 0.2s ease-in;
+
+        h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        } 
+    }
+
+    .card:hover {
+        transform: translateY(-15px);
+    }
+}
